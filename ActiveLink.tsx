@@ -7,13 +7,14 @@ type Props = {
   children: ReactElement;
   href: string;
   activeClassName: string;
-  [x: string]: any;
 }
 
+
+
 const ActiveLink = ({ router, children, ...props }: Props) => {
-  
+
   let className: string = children.props.className;
-  if (router.pathname === props.href) {
+  if (router.asPath === props.href) {
     className = `${className} ${props.activeClassName}`;
   }
 
